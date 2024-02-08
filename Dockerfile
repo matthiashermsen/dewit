@@ -1,5 +1,5 @@
 # Build stage
-FROM golang:1.21.6-alpine3.18 AS build
+FROM golang:1.22.0-alpine3.18 AS build
 WORKDIR /app
 
 ADD . .
@@ -12,7 +12,7 @@ RUN apk add --no-cache make git
 RUN make build
 
 # Run stage
-FROM alpine:3.19.0
+FROM alpine:3.19.1
 WORKDIR /app
 
 COPY --from=build /app/build/dewit .
