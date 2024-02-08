@@ -28,7 +28,7 @@ jobs:
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
         uses: actions/setup-go@v5
         with:
-          go-version: 1.21.x
+          go-version: 1.22.x
 
       - name: Setup Git user
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
