@@ -6,5 +6,5 @@ import (
 )
 
 func RegisterRoute(mux *http.ServeMux, logger *slog.Logger, appVersion string) {
-	mux.HandleFunc("/app-version", Handle(logger, appVersion))
+	mux.HandleFunc("GET /app-version", Handle(logger, appVersion))
 }

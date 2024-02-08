@@ -3,5 +3,5 @@ package ping
 import "net/http"
 
 func RegisterRoute(mux *http.ServeMux) {
-	mux.HandleFunc("/ping", Handle())
+	mux.HandleFunc("GET /ping", Handle())
 }
