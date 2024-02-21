@@ -39,10 +39,10 @@ jobs:
       - name: Create new tag
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
         run: |
-          NEXT_VERSION=${{ steps.get_next_version.outputs.version }}
+          next_version=${{ steps.get_next_version.outputs.version }}
           
-          git tag $NEXT_VERSION
-          git push origin $NEXT_VERSION
+          git tag $next_version
+          git push origin $next_version
 
       - name: Build for platforms
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
