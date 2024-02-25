@@ -75,7 +75,7 @@ jobs:
         if: ${{ steps.get_next_version.outputs.hasNextVersion == 'true' }}
         uses: docker/build-push-action@v5
         env:
-          DOCKER_REPOSITORY: ghcr.io/matthiashermsen/dewit
+          DOCKER_REPOSITORY: ghcr.io/${{ github.repository }}
         with:
           platforms: linux/amd64,linux/arm64
           push: true
