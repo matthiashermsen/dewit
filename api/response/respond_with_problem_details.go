@@ -7,6 +7,8 @@ import (
 )
 
 func RespondWithProblemDetails(problemDetails ProblemDetails, w http.ResponseWriter, logger *slog.Logger) {
+	w.Header().Add("Content-Type", "application/problem+json")
+
 	bytes, err := json.Marshal(problemDetails)
 
 	if err != nil {

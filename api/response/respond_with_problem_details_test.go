@@ -29,4 +29,9 @@ func TestRespondWithProblemDetails(t *testing.T) {
 
 	assert.NoError(t, err)
 	assert.Equal(t, expectedProblemDetails, actualResponseBody, fmt.Sprintf("Expected response details to be '%#v', but got '%#v'", expectedProblemDetails, actualResponseBody))
+
+	expectedContentType := "application/problem+json"
+	actualContentType := recorder.Header().Get("Content-Type")
+
+	assert.Equal(t, expectedContentType, actualContentType, fmt.Sprintf("Expected content type to be '%s', but got '%s'", expectedContentType, actualContentType))
 }
