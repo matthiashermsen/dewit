@@ -1,0 +1,24 @@
+# Docker
+Dockerfile
+.dockerignore
+
+# Editor
+.vscode
+.idea
+
+# Github
+.github
+
+# Git
+# .git is required for build flags
+.gitignore
+.gitattributes
+
+# Go
+*_test.go
+build
+coverage
+
+# Repository
+README.md
+LICENSE
