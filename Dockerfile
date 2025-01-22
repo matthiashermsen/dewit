@@ -12,7 +12,7 @@ RUN apk add --no-cache make git
 RUN make build
 
 # Run stage
-FROM alpine:3.21.0
+FROM alpine:3.21.2
 WORKDIR /app
 
 COPY --from=build /app/build/dewit .
